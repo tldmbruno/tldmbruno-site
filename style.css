@@ -5,17 +5,14 @@
 :root {
   --color-light: #fff;
   --color-dark: #111;
-  --color-primary: #6b7;
-  --color-alert: #ff0;
-  --color-error: #f0e;
 }
 
-#dark-theme {
+#light-theme {
   --color-fg: var(--color-light);
   --color-bg: var(--color-dark);
 }
 
-#dark-theme:target {
+#light-theme:target {
   --color-fg: var(--color-dark);
   --color-bg: var(--color-light);
 }
@@ -46,16 +43,18 @@ header {
 
   position: fixed;
   top: 0px;
+
+  z-index: 9999;
 }
 
 section {
-  padding: 10vh 9%;
+  padding: 2rem clamp(1rem, 10vw, 50rem);
   border-bottom: 1px solid var(--color-fg);
 }
 
 img {
+  user-select: none;
   box-shadow: 0px 0px 0px var(--color-fg);
-
   transition: transform .2s, box-shadow .2s, rotate .2s;
 }
 
@@ -63,7 +62,6 @@ img:hover,
 img:active {
   transform: translate(-8px, -8px);
   box-shadow: 8px 8px 0px var(--color-fg);
-  rotate: -1deg;
 }
 
 a,
@@ -74,13 +72,22 @@ a:focus {
   text-decoration: none;
 }
 
+header a {
+  background-color: var(--color-bg);
+}
+
 a:hover {
   color: var(--color-bg);
   background-color: var(--color-fg);
 }
 
+a.inverted:hover {
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+}
+
 .profile-picture {  
-  width: 10rem;
+  width: min(10rem, 20vw);
 }
 
 .welcome-section {
@@ -89,12 +96,16 @@ a:hover {
 
 .links-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+
+  color: var(--color-bg);
+  background-color: var(--color-fg);
 }
 
 .project {
   display: flex;  
-  gap: 1rem;
+  gap: 2rem;
   
   padding: 1rem 0px;
 }
@@ -103,6 +114,9 @@ a:hover {
   width: 40%;
   float: inline-start;
 
+  image-rendering: optimizeSpeed;
+  object-fit: cover;
+
   user-select: none;
 }
 
@@ -110,4 +124,54 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+}
+
+.align-right {
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  header {
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--color-bg);
+    min-height: 3rem;
+  }
+
+  .project-preview {
+    width: 100%;
+    height: inherit;
+  }
+
+  .project {
+    display: block;
+    border-top: 1px solid var(--color-fg);
+  }
+}
+
+#secret-strawberry-theme:target {
+  --color-fg: #253;
+  --color-bg: #fbb;
+  font-family: cursive;
+}
+
+#secret-strawberry-theme:target a:hover {
+  color: #fff;
+  background-color: #e35;
+  border-radius: 6px 0px 6px 0px;
+}
+
+#secret-strawberry-theme:target img {
+  border-radius: 6px 0px 6px 0px;
+  transition: all .2s;
+}
+
+#secret-strawberry-theme:target img:is(:hover, :active) {
+  box-shadow: 4px 4px 0px #e35;
+  rotate: 1deg;
+}
+
+#secret-strawberry-theme:target .links-section {
+  background-color: #253;
 }
