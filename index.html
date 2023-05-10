@@ -1,16 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="en" id="dark-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Bruno Peres</title>
+</head>
+<body>
+
+  <header>
+    <a href="#">Dark</a>
+    <a href="#dark-theme">Light</a>
+  </header>
+
+  <section class="welcome-section">
+    <div class="flex">
+      <div>
+        <h1 class="site-title">Bruno Peres (@tldmbruno)</h1>
+        <p>Game Developer :: C#, Unity, Godot</p>
+      </div>
+      <img src="./res/profile.png" class="profile-picture"/>
+    </div>
+    <div>
+      <p>10/05/2023</p>
+      <p>You arrived at strange times, mate. Strange times indeed. 🦜</p>
+      <p>What happened? Well... Let's just say...</p>
+      <p>
+        ...I really liked designing web sites, using React and Angular as well. I used TypeScript and I've just finished my
+        first real project. Things were going pretty well, no big frustration or anything. The problem arrived when
+        I had some time to think about my dreams and my goals in life. Front-end development doesn't use the same tools as
+        game development, so I realized if I wanted to make my dream game in the future, I would have to hone different
+        skills, some contradicting with each other. There's no real synergy amongst gamedev and webdev. After talking with my
+        family I decided to switch gears and go directly towards my life goals, instead of taking sharp and inconsistent
+        turns. Now there will be synergy amongst my hobby and my job, since they require the same skills and tools.
+      </p>
+      <p>Since I'm no longer applying for React jobs, I can create minimalistic static web pages now, just like 1990.</p>
+      <p>Enjoy the lack of JavaScript.</p>
+    </div>
+  </section>
+
+  <section class="links-section">
+    <a href="https://github.com/tldmbruno/">GitHub</a>
+    <a href="https://thelastdarkmage.itch.io/">Games</a>
+    <a href="https://twitter.com/thelastdarkmage/">Twitter</a>
+    <a href="https://thelastmage.substack.com/">Blog</a>
+  </section>
+
+  <section class="projects-section">
+    <h1>Projects</h1>
+
+    <div class="project">
+      <img src="./res/i-dice-fish-showcase.gif" class="project-preview"/>
+      <div>
+        <h1 class="project-name">I Dice Fish</h1>
+        <p>Made for the GMTK 2022 Game Jam.</p>
+        <p>Won place #117 of #6076 entries</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div>
+        <h1 class="project-name">Anatak</h1>
+        <p>You wander through a storm under a red tinted night sky. In the slippery stone road, you trip in something.</p>
+        <p>Anatak is a endless-runner with a rythym-like combat.</p>
+      </div>
+      <img src="./res/anatak-showcase.gif" class="project-preview"/>
+    </div>
+
+  </section>
+
+  <section class="contact-section">
+    <h1>Contact</h1>
+    <p>Discord: Bruno Peres#3868</p>
+    <p>Email: dev.brunoperes@gmail.com</p>
+  </section>
+
+</body>
 </html>

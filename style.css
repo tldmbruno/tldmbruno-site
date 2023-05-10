@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-light: #fff;
+  --color-dark: #111;
+  --color-primary: #6b7;
+  --color-alert: #ff0;
+  --color-error: #f0e;
+}
+
+#dark-theme {
+  --color-fg: var(--color-light);
+  --color-bg: var(--color-dark);
+}
+
+#dark-theme:target {
+  --color-fg: var(--color-dark);
+  --color-bg: var(--color-light);
+}
+
+::-webkit-scrollbar {
+  border-left: 1px solid var(--color-fg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-fg);
+}
+
+body {
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  margin: 0px;
+  height: 100vh;
+
+  font-family: monospace;
+  font-size: large;
+}
+
+header {
+  display: flex;
+  justify-content: end;
+
+  width: 100%;
+
+  position: fixed;
+  top: 0px;
+}
+
+section {
+  padding: 10vh 9%;
+  border-bottom: 1px solid var(--color-fg);
+}
+
+img {
+  box-shadow: 0px 0px 0px var(--color-fg);
+
+  transition: transform .2s, box-shadow .2s, rotate .2s;
+}
+
+img:hover,
+img:active {
+  transform: translate(-8px, -8px);
+  box-shadow: 8px 8px 0px var(--color-fg);
+  rotate: -1deg;
+}
+
+a,
+a:visited,
+a:focus {
+  padding: .4rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-bg);
+  background-color: var(--color-fg);
+}
+
+.profile-picture {  
+  width: 10rem;
+}
+
+.welcome-section {
+  min-height: 90vh;
+}
+
+.links-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.project {
+  display: flex;  
+  gap: 1rem;
+  
+  padding: 1rem 0px;
+}
+
+.project-preview {
+  width: 40%;
+  float: inline-start;
+
+  user-select: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
