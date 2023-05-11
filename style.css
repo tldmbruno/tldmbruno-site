@@ -92,8 +92,9 @@ a:hover {
   background-color: var(--color-bg);
 }
 
-.profile-picture {  
-  width: min(10rem, 20vw);
+.profile-picture {
+  max-width: 7rem;
+  object-fit: cover;
 }
 
 .welcome-section {
@@ -127,6 +128,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -134,12 +136,13 @@ a:hover {
   text-align: right;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 639px) {
   header {
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--color-bg);
     min-height: 3rem;
+    font-size: .8em;
   }
 
   .project-preview {
