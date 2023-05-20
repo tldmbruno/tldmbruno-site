@@ -124,6 +124,12 @@ a:hover {
   user-select: none;
 }
 
+.pixelart {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
 .flex {
   display: flex;
   align-items: center;
