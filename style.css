@@ -3,187 +3,113 @@
 }
 
 :root {
-  --color-light: #fff;
-  --color-dark: #111;
-}
-
-#light-theme {
-  --color-fg: var(--color-light);
-  --color-bg: var(--color-dark);
-}
-
-#light-theme:target {
-  --color-fg: var(--color-dark);
-  --color-bg: var(--color-light);
-}
-
-::-webkit-scrollbar {
-  border-left: 1px solid var(--color-fg);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-fg);
+  --color-text: #f3f3f3;
+  --color-background: #161414;
+  --color-link: #56b3ff;
+  --color-social: #fa8955;
 }
 
 body {
-  color: var(--color-fg);
-  background-color: var(--color-bg);
-  margin: 0px;
-  height: 100vh;
-
-  font-family: monospace;
-  font-size: large;
-}
-
-header {
   display: flex;
-  justify-content: end;
-
-  width: 100%;
-
-  position: fixed;
-  top: 0px;
-
-  z-index: 9999;
-}
-
-section,
-footer {
-  padding: 2rem clamp(.2rem, 6vw, 50rem);
-  border-bottom: 1px solid var(--color-fg);
-}
-
-img {
+  margin: 0px;
+  padding: 2rem;
+  height: 100vh;
+  
+  font-family: monospace;
   user-select: none;
-  box-shadow: 0px 0px 0px var(--color-fg);
-  transition: transform .2s, box-shadow .2s, rotate .2s;
+  
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 
-img:hover,
-img:active {
-  transform: translate(-8px, -8px);
-  box-shadow: 8px 8px 0px var(--color-fg);
+noscript {
+  font-size: 1em;
+}
+
+section {
+  font-size: max(1.2em, 2vw);
+  padding: .5em;
+}
+
+article {
+  font-size: .8em;
+  text-align: justify;
+  max-width: 55em;
+  user-select: text;
+  margin: auto;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--color-text);
 }
 
 a,
 a:visited,
-a:focus {
-  padding: .4rem;
-  color: inherit;
+a:link {
+  color: var(--color-link);
   text-decoration: none;
 }
 
-header a {
-  background-color: var(--color-bg);
-}
-
 a:hover {
-  color: var(--color-bg);
-  background-color: var(--color-fg);
+  color: var(--color-background);
+  background-color: var(--color-link);
 }
 
-.inverted {
-  color: var(--color-bg);
-  background-color: var(--color-fg);
+.social,
+.social:visited,
+.social:link {
+  color: var(--color-social);
 }
 
-.inverted a:hover {
-  color: var(--color-fg);
-  background-color: var(--color-bg);
+.social:hover {
+  color: var(--color-background);
+  background-color: var(--color-social);
 }
 
-.profile-picture {
-  max-width: 7rem;
-  object-fit: cover;
+.picture {
+  display: block;
+  height: 80vh;
 }
 
-.welcome-section {
-  min-height: 90vh;
+.slide-in {
+  opacity: 0;
+  animation: slide-in .4s forwards;
 }
 
-.links-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
+.center {
+  grid-auto-flow: column;
 
-.project {
-  display: flex;  
-  gap: 2rem;
-  
-  padding: 1rem 0px;
-}
-
-.project-preview {
-  width: 40%;
-  float: inline-start;
-
-  image-rendering: optimizeSpeed;
-  object-fit: cover;
-
-  user-select: none;
-}
-
-.pixelart {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
-
-.flex {
-  display: flex;
+  margin: auto;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: space-around;
+  gap: 4vw;
 }
 
-.align-right {
-  text-align: right;
+.center-row {
+  grid-auto-flow: row;
+
+  margin: auto;
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4vw;
 }
 
-@media (max-width: 639px) {
-  header {
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: var(--color-bg);
-    min-height: 3rem;
-    font-size: .8em;
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
   }
-
-  .project-preview {
-    width: 100%;
-    height: inherit;
-  }
-
-  .project {
-    display: block;
-    border-top: 1px solid var(--color-fg);
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-#secret-theme:target {
-  --color-fg: rgb(238, 215, 194);
-  --color-bg: rgb(44, 36, 33);
-  --radius: 26px;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-#secret-theme:target a:hover {
-  color: var(--color-bg);
-  background-color: var(--color-fg);
-  outline: 3px solid var(--color-bg);
-  border-radius: var(--radius);
-}
-
-#secret-theme:target img {
-  border-radius: var(--radius);
-}
-
-#secret-theme:target img:is(:hover, :active) {
-  box-shadow: 4px 4px 0px var(--color-fg);
-}
-
-#secret-theme:target .links-section {
-  background-color: var(--color-fg);
+@media (max-width: 680px) {
+  .center {
+    grid-auto-flow: row;
+  }
+  .picture {
+    display: none;
+  }
 }
